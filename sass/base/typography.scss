@@ -1,0 +1,41 @@
+body {
+  font-family: "Lato", sans-serif; /* putting font family here will allow all children to inherit (more efficient) */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7; /* times bigger than previous line height */
+  color: $color-grey-dark;
+  padding: 2rem;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+
+  /* fix for shaking from animation, bug no one knows y */
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    /* since a span is an inline elem, you'll need to change display to change behavior*/
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+
+    animation-name: moveInLeft; /* that you've specified below */
+    animation-duration: 2s;
+    animation-timing-function: ease-out; /*there are other distributions of speed */
+
+    /* animation-delay: 3s; */
+    /* animation-iteration-count: 3; */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.6rem;
+
+    animation: moveInRight 2s ease-out;
+  }
+}

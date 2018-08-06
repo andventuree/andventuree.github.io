@@ -1,0 +1,226 @@
+@keyframes moveInLeft {
+  0% {
+    /* start of animation */
+    opacity: 0;
+    transform: translateX(-10rem);
+    /* x moves right */ }
+  80% {
+    transform: translateX(2rem);
+    /* rotate(180deg) */ }
+  100% {
+    /* end of animation */
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    /* start of animation */
+    opacity: 0;
+    transform: translateX(10rem);
+    /* x moves right */ }
+  80% {
+    transform: translateX(-2rem); }
+  100% {
+    /* end of animation */
+    opacity: 1;
+    transform: translateX(0); } }
+
+/* normalize - makes every browser render the same way but since browsers are getting better and better, no need to normalize (wipes all styles, even browser settings)
+Rather, just reset to bring back to browser settings*/
+*,
+*::after,
+*::before {
+  /* universal selector */
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  /* change box model so border and padding is not added to total height and width specified for a box */
+  box-sizing: inherit; }
+
+html {
+  /* font-size: 10px; */
+  /* used 10px b/c its a clean num| 10px = 1 rem */
+  font-size: 62.5%;
+  /* default browser f-size is 16px, 100/16 = 62.5, making it completely dynamic */ }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  /* putting font family here will allow all children to inherit (more efficient) */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  /* times bigger than previous line height */
+  color: #777;
+  padding: 2rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* fix for shaking from animation, bug no one knows y */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    /* since a span is an inline elem, you'll need to change display to change behavior*/
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    animation-name: moveInLeft;
+    /* that you've specified below */
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    /*there are other distributions of speed */
+    /* animation-delay: 3s; */
+    /* animation-iteration-count: 3; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.6rem;
+    animation: moveInRight 2s ease-out; }
+
+.btn {
+  /* psuedo class, style classes under special states. link is specific to a tag */
+  /* combine all these psuedo classes to make it feel like a btn press */
+  /* in order to have an after effect, you MUST specify content and display prop */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* kills blue underline for a tag */
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    /* this prop must be on intitial state!, just how it works */
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    /* since we want to move it vertical, use -Y */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* y , x , blur , color */ }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      /* */
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-0.1rem);
+    /* active is in relation to inital link state, not back on hover */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    /* y , x , blur , color */ }
+  .btn--white {
+    background: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn--green {
+    background: #0582ca;
+    color: #fff; }
+    .btn--green::after {
+      background: #0582ca; }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s; }
+
+@keyframes moveInButton {
+  0% {
+    /* start of animation */
+    opacity: 0;
+    transform: translateY(10rem);
+    /* Y moves up */ }
+  100% {
+    /* end of animation */
+    opacity: 1;
+    transform: translateY(0); } }
+  .btn--animated {
+    animation: moveInButton 0.5s 0.75s;
+    /* .75 is the delay */
+    animation-fill-mode: backwards;
+    /* will apply 0% animation when page loads so it doesn't appear randomly */ }
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #0582ca;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #0582ca;
+  padding: 3px;
+  transition: all 0.2s; }
+
+.btn-text:hover {
+  background-color: #0582ca;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0px); }
+
+.navbar {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(0, 100, 148, 0.8), rgba(0, 166, 251, 0.8)), url(../img/nik-macmillan-280300-unsplash.jpg);
+  background-size: cover;
+  /* will always try to fit the viewport in the box */
+  background-position: top;
+  /* if img needs to get cut off, it'll always show position specified. This will cut off bottom */
+  /* background-position: center; will crop top and bottom to keep img center */
+  -webkit-clip-path: ploygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  /* topLeft, topRight, bottomRight, bottomLeft */
+  position: relative;
+  /* if this relative is not present, the .logo-box would be 40px from top left */
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px; }
+  .header__text-box {
+    position: absolute;
+    /*in relation to parent */
+    /* we want to center the container to be center of page*/
+    top: 50%;
+    left: 50%;
+    /*% of the parent (container elem) */
+    /* but instead of playing w/ the %, (cause 50% doesn't work out right) combine it with transform */
+    transform: translate(-50%, -50%);
+    /* transforms position of element itself */
+    text-align: center; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem)) / 3 + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
