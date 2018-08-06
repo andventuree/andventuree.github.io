@@ -1,0 +1,8 @@
+@mixin clearfix {
+  //b/c we'll nest it inside elements
+  &::after {
+    content: ""; //need to specify a content prop or elem wont appear on page
+    display: table; //standard way to use clearfix
+    clear: both; //critical: clears both floats, left and right
+  }
+}

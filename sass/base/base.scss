@@ -1,0 +1,21 @@
+/* normalize - makes every browser render the same way but since browsers are getting better and better, no need to normalize (wipes all styles, even browser settings)
+Rather, just reset to bring back to browser settings*/
+
+*,
+*::after,
+*::before {
+  /* universal selector */
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */ /* change box model so border and padding is not added to total height and width specified for a box */
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 10px; */ /* used 10px b/c its a clean num| 10px = 1 rem */
+  font-size: 62.5%; /* default browser f-size is 16px, 100/16 = 62.5, making it completely dynamic */
+}
+
+body {
+  box-sizing: border-box;
+}
