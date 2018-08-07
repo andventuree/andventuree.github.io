@@ -82,6 +82,44 @@ body {
     letter-spacing: 1.6rem;
     animation: moveInRight 2s ease-out; }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: inline-block;
+  background-image: linear-gradient(to right, #006494, #00a6fb);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.8s; }
+  .heading-secondary:hover {
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-mini {
+  margin-bottom: 2rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+.u-margin-bottom-huge {
+  margin-bottom: 10rem; }
+
 .btn {
   /* psuedo class, style classes under special states. link is specific to a tag */
   /* combine all these psuedo classes to make it feel like a btn press */
@@ -167,6 +205,47 @@ body {
 .btn-text:active {
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(0px); }
+
+.composition {
+  position: relative;
+  height: 26rem; }
+  .composition__photo {
+    width: 30%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.5s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 12rem;
+      top: 5rem;
+      -webkit-clip-path: polygon(0 3%, 100% 3%, 100% 91%, 0 91%);
+      clip-path: polygon(0 3%, 100% 3%, 100% 91%, 0 91%);
+      /* topLeft, topRight, bottomRight, bottomLeft */
+      transform: skew(3deg, -6deg); }
+      .composition__photo--p1:hover {
+        left: 5rem; }
+    .composition__photo--p2 {
+      right: 12rem;
+      top: 5rem;
+      -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 91%, 0 91%);
+      clip-path: polygon(0 2%, 100% 2%, 100% 91%, 0 91%);
+      /* topLeft, topRight, bottomRight, bottomLeft */
+      transform: skew(-3deg, 6deg); }
+      .composition__photo--p2:hover {
+        right: 5rem; }
+    .composition__photo--p3 {
+      width: 25%;
+      border-radius: 50%;
+      left: 37%;
+      border: 0.2rem solid #eee; }
+      .composition__photo--p3:hover {
+        box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+        transform: scale(1.05) translateY(-0.5rem);
+        border: 0.2rem solid goldenrod; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
 
 .navbar {
   border-bottom: 1px solid black;

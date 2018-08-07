@@ -1,0 +1,57 @@
+.composition {
+  position: relative;
+  height: 26rem;
+
+  &__photo {
+    width: 30%; //makes image scale nicely with viewport
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10; //so we can distinqusish later, which img on top
+    transition: all 0.5s;
+
+    outline-offset: 2rem; //adds space between outline and elem content
+
+    &--p1 {
+      left: 12rem;
+      top: 5rem;
+      -webkit-clip-path: polygon(0 3%, 100% 3%, 100% 91%, 0 91%);
+      clip-path: polygon(0 3%, 100% 3%, 100% 91%, 0 91%);
+      /* topLeft, topRight, bottomRight, bottomLeft */
+      transform: skew(3deg, -6deg);
+      &:hover {
+        left: 5rem;
+      }
+    }
+
+    &--p2 {
+      right: 12rem;
+      top: 5rem;
+      -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 91%, 0 91%);
+      clip-path: polygon(0 2%, 100% 2%, 100% 91%, 0 91%);
+      /* topLeft, topRight, bottomRight, bottomLeft */
+      transform: skew(-3deg, 6deg);
+      &:hover {
+        right: 5rem;
+      }
+    }
+
+    &--p3 {
+      width: 25%;
+      border-radius: 50%;
+      left: 37%;
+      border: 0.2rem solid $color-grey-light-2;
+      &:hover {
+        box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+        transform: scale(1.05) translateY(-0.5rem); //makes it pop
+        border: 0.2rem solid goldenrod; //like a border but not the same
+      }
+    }
+  }
+
+  //composition:hover composition__photo:not(:hover)
+  //first find the photo you hovered and then, look at the others
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}
