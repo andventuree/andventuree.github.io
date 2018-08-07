@@ -88,10 +88,13 @@ body {
   font-weight: 700;
   letter-spacing: 2px;
   display: inline-block;
-  background-image: linear-gradient(to right, #006494, #00a6fb);
-  -webkit-background-clip: text;
-  color: transparent;
   transition: all 0.8s; }
+  .heading-secondary--color {
+    background-image: linear-gradient(to right, #006494, #00a6fb);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .heading-secondary--plain {
+    color: #eee; }
   .heading-secondary:hover {
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
@@ -99,11 +102,6 @@ body {
   font-size: 1.6rem;
   font-weight: 700;
   text-transform: uppercase; }
-
-.paragraph {
-  font-size: 1.6rem; }
-  .paragraph:not(:last-child) {
-    margin-bottom: 3rem; }
 
 .u-center-text {
   text-align: center; }
@@ -113,6 +111,9 @@ body {
 
 .u-margin-bottom-small {
   margin-bottom: 4rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 6rem; }
 
 .u-margin-bottom-big {
   margin-bottom: 8rem; }
@@ -247,6 +248,23 @@ body {
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95); }
 
+.tech-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+  transition: all 0.2s; }
+  .tech-box__icon {
+    font-size: 6rem;
+    display: inline-block;
+    background-image: linear-gradient(to bottom, rgba(0, 166, 251, 0.8), rgba(0, 0, 0, 0.8));
+    -webkit-background-clip: text;
+    color: transparent; }
+  .tech-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
 .navbar {
   border-bottom: 1px solid black;
   border-top: 1px solid black; }
@@ -303,3 +321,17 @@ body {
     width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
     width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -30vh; }
+
+.section-tech-stack {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(0, 100, 148, 0.8), rgba(0, 166, 251, 0.8)), url(../img/nathan-lemon-392338-unsplash.jpg);
+  background-size: cover;
+  margin-top: -10rem;
+  transform: skewY(-7deg); }
+  .section-tech-stack > * {
+    transform: skewY(7deg); }

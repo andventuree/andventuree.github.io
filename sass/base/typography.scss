@@ -47,13 +47,20 @@ body {
   letter-spacing: 2px;
 
   display: inline-block;
-  background-image: linear-gradient(
-    to right,
-    $color-primary-light,
-    $color-primary-dark
-  );
-  -webkit-background-clip: text; //background stops where text stops
-  color: transparent; //takes out font color to show gradient color, which is an img
+
+  &--color {
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    -webkit-background-clip: text; //background stops where text stops
+    color: transparent; //takes out font color to show gradient color, which is an img
+  }
+
+  &--plain {
+    color: $color-grey-light-2;
+  }
 
   transition: all 0.8s;
 
@@ -66,12 +73,4 @@ body {
   font-size: $default-font-size;
   font-weight: 700;
   text-transform: uppercase;
-}
-
-.paragraph {
-  font-size: $default-font-size;
-
-  &:not(:last-child) {
-    margin-bottom: 3rem;
-  }
 }
