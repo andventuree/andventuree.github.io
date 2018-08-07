@@ -5,7 +5,7 @@
     transform: translateX(-10rem);
     /* x moves right */ }
   80% {
-    transform: translateX(2rem);
+    transform: translateY(1rem);
     /* rotate(180deg) */ }
   100% {
     /* end of animation */
@@ -19,7 +19,7 @@
     transform: translateX(10rem);
     /* x moves right */ }
   80% {
-    transform: translateX(-2rem); }
+    transform: translateY(-1rem); }
   100% {
     /* end of animation */
     opacity: 1;
@@ -282,8 +282,8 @@ body {
   /* topLeft, topRight, bottomRight, bottomLeft */
   position: relative;
   /* if this relative is not present, the .logo-box would be 40px from top left */
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px; }
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px; }
   .header__text-box {
     position: absolute;
     /*in relation to parent */
