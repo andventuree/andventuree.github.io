@@ -7,20 +7,20 @@
   padding: 3rem;
   padding-left: 9rem; //add more b/c shape exceeds padding
   transform: skewX(-12deg);
+  transition: all 0.3s;
 
   &__shape {
     width: 15rem;
     height: 15rem;
     float: left;
     transform: translateX(-3rem) skew(12deg);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     position: relative;
   }
 
   &__img {
     height: 100%;
-    transform: scale(1.4);
+    transform: scale(1);
+    filter: blur(2px) brightness(80%);
 
     backface-visibility: hidden;
     transition: all 0.5s;
@@ -28,7 +28,6 @@
 
   &__text {
     transform: skewX(12deg);
-    height: 15rem;
   }
 
   &__link {
@@ -46,22 +45,27 @@
     position: absolute;
     top: 23%;
     left: 50%;
-    transform: translate(50%, 20%);
+
+    transform: translate(-50%, 20%);
     color: $color-white;
     font-size: 5rem;
     text-align: center;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.5s;
     backface-visibility: hidden;
   }
 
+  &:hover {
+    transform: translateY(-1rem) skewX(-12deg);
+  }
+
   &:hover &__caption {
-    opacity: 1;
-    transform: translate(-50%, 20%);
+    opacity: 0;
+    transform: translate(50%, 20%);
   }
 
   &:hover &__img {
-    transform: scale(1);
-    filter: blur(3px) brightness(80%);
+    transform: scale(1.2);
+    filter: none;
   }
 }
