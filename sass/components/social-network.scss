@@ -1,0 +1,55 @@
+.social-network {
+  &__bubble {
+    font-size: 5rem;
+    text-shadow: 0.3rem 0.5rem 1rem rgba($color-black, 0.2);
+    perspective: 1000px;
+    backface-visibility: hidden;
+
+    &:hover {
+      //looks like button is raised
+      /* since we want to move it vertical, use -Y */
+      transform: translateY(-0.3rem);
+      text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.5);
+
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &:active {
+      //simulates button click
+      /* active is in relation to inital link state, not back on hover */
+      transform: translateY(-0.1rem);
+      text-shadow: 0.3rem 0.5rem 1rem rgba($color-black, 0.1);
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4s;
+    }
+
+    &--animated {
+      animation: moveInButton 1s 1s; /* .75 is the delay */
+      animation-fill-mode: backwards; /* will apply 0% animation when page loads so it doesn't appear randomly */
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: $color-grey-light-1;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 2rem 0 1rem;
+    }
+  }
+}

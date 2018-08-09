@@ -29,3 +29,22 @@
     transform: translateX(0);
   }
 }
+
+@keyframes moveInButton {
+  0% {
+    /* start of animation */
+    opacity: 0;
+    transform: translateY(10rem); /* Y moves up */
+  }
+  70% {
+    /* end of animation */
+    opacity: 1;
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    /* end of animation */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
