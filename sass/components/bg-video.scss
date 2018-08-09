@@ -1,0 +1,27 @@
+// Already added to _home.scss
+// .section-stories {
+//   position: relative;
+// }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%; //of parent
+  width: 100%; //of parent
+  z-index: -1; // makes sure its behind all other elems
+  opacity: 0.5; //gives it the faint look
+  overflow: hidden;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+
+  //Scale sizing of video
+  &__content {
+    height: 100%;
+    width: 100%;
+    //just the above will have sizing issues limited by size of video in either w or h
+    object-fit: cover; //fill entire parent while maintaining its aspect ratio
+    //anything that doesn't fit will be clipped off
+    //other options: fill , contain
+  }
+}
