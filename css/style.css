@@ -261,7 +261,8 @@ body {
     -webkit-background-clip: text;
     color: transparent; }
   .tech-box:hover {
-    transform: translateY(-1.5rem) scale(1.03); }
+    transform: translateY(0.3rem) scale(0.99);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
 
 .project {
   width: 90%;
@@ -305,7 +306,8 @@ body {
     transition: all 0.5s;
     backface-visibility: hidden; }
   .project:hover {
-    transform: translateY(-1rem) skewX(-12deg); }
+    transform: translateY(0.3rem) skewX(-12deg) scale(0.99);
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1); }
   .project:hover .project__caption {
     opacity: 0;
     transform: translate(50%, 20%); }

@@ -21,6 +21,7 @@
   }
 
   &:hover {
-    transform: translateY(-1.5rem) scale(1.03);
+    transform: translateY(0.3rem) scale(0.99);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
   }
 }
