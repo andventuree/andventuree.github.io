@@ -1,8 +1,8 @@
-@keyframes moveInLeft {
+@keyframes moveInPrimaryHeader {
   0% {
     /* start of animation */
     opacity: 0;
-    transform: translateX(-10rem); /* x moves right */
+    transform: translateY(-20rem);
   }
   80% {
     transform: translateY(1rem); /* rotate(180deg) */
@@ -10,23 +10,23 @@
   100% {
     /* end of animation */
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
-@keyframes moveInRight {
+@keyframes moveInBottomHeader {
   0% {
     /* start of animation */
     opacity: 0;
-    transform: translateX(10rem); /* x moves right */
+    transform: translateY(-20rem);
   }
   80% {
-    transform: translateY(-1rem);
+    transform: translateY(1rem);
   }
   100% {
     /* end of animation */
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
@@ -36,11 +36,11 @@
     opacity: 0;
     transform: translateY(-6rem); /* Y moves up */
   }
-  // 70% {
-  //   /* end of animation */
-  //   opacity: 1;
-  //   transform: translateY(-2rem);
-  // }
+  80% {
+    /* end of animation */
+    opacity: 1;
+    transform: translateY(-2rem);
+  }
 
   100% {
     /* end of animation */

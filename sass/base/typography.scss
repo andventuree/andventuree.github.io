@@ -23,8 +23,8 @@ body {
     font-weight: 400;
     letter-spacing: 1rem;
 
-    animation-name: moveInLeft; /* that you've specified below */
-    animation-duration: 2s;
+    animation-name: moveInPrimaryHeader; /* that you've specified below */
+    animation-duration: 1.5s;
     animation-timing-function: ease-out; /*there are other distributions of speed */
 
     /* animation-delay: 3s; */
@@ -36,8 +36,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.6rem;
-
-    animation: moveInRight 2s ease-out;
+    animation: moveInBottomHeader 2s ease-out;
   }
 }
 
