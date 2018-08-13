@@ -38,7 +38,7 @@
     }
 
     &--animated {
-      animation: moveInButton 1s 1s; /* .75 is the delay */
+      animation: moveInButton 2s 1.7s; /* .75 is the delay */
       animation-fill-mode: backwards; /* will apply 0% animation when page loads so it doesn't appear randomly */
     }
   }
