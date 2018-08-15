@@ -12,9 +12,39 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>AwW &rarr; Software Engineer</title>
+    <script src="index.js" defer></script>
+
 </head>
 
 <body>
+
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+        <div class="navigation__background">&nbsp;</div>
+        <!--&nbsp means white space -->
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <a href="#my-story-section" class="navigation__link">
+                        <span>01</span>My Story</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#tech-stack-section" class="navigation__link">
+                        <span>02</span>What I Know</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#project-section" class="navigation__link">
+                        <span>03</span>What I've Built</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
     <header class="header">
         <div class="bg-video">
             <video class="bg-video__content" autoplay muted loop>
@@ -51,6 +81,7 @@
 
     <main>
         <section class="section-about">
+            <a name='my-story-section'></a>
             <div class='u-center-text u-margin-bottom-big'>
                 <h2 class="heading-secondary heading-secondary--color">My Story</h2>
             </div>
@@ -88,6 +119,7 @@
         </section>
 
         <section class="section-tech-stack">
+            <a name='tech-stack-section'></a>
             <div class='u-center-text u-margin-bottom-big'>
                 <h2 class="heading-secondary heading-secondary--plain">What I Know</h2>
             </div>
@@ -174,6 +206,7 @@
 
 
         <section class="section-project">
+            <a name='project-section'></a>
             <div class='u-center-text u-margin-bottom-big'>
                 <h2 class="heading-secondary heading-secondary--color">What I've Built</h2>
             </div>
