@@ -2,9 +2,6 @@
   position: relative;
   height: 26rem;
 
-  @include respond(tab-port) {
-    height: 22rem;
-  }
   @include respond(phone) {
     height: 20rem;
   }
@@ -71,7 +68,7 @@
     &--p3 {
       width: 25%;
       border-radius: 50%;
-      left: 37%;
+      left: 37.5%;
       border: 0.2rem solid $color-grey-light-2;
       &:hover {
         box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
