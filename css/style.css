@@ -1,3 +1,18 @@
+/*
+0 - 600px       Phone
+600 - 900px     Tablet portrait
+900 - 1200px    Tablet landscape
+[1200 - 1800] is where CSS is styled against
+1800px +        Large desktops
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px; applied below
+*/
 @keyframes moveInPrimaryHeader {
   0% {
     /* start of animation */
@@ -51,10 +66,20 @@ Rather, just reset to bring back to browser settings*/
   box-sizing: inherit; }
 
 html {
-  /* font-size: 10px; */
-  /* used 10px b/c its a clean num| 10px = 1 rem */
-  font-size: 62.5%;
-  /* default browser f-size is 16px, 100/16 = 62.5, making it completely dynamic */ }
+  /* default browser f-size is 16px, 100/16 = 62.5, making it completely dynamic */
+  font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 40%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
