@@ -2,6 +2,10 @@
   position: relative;
   height: 26rem;
 
+  @include respond(phone) {
+    height: 20rem;
+  }
+
   &__photo {
     width: 30%; //makes image scale nicely with viewport
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
@@ -12,6 +16,14 @@
 
     outline-offset: 2rem; //adds space between outline and elem content
 
+    @include respond(tab-port) {
+      width: 40%;
+    }
+
+    @include respond(phone) {
+      width: 45%;
+    }
+
     &--p1 {
       left: 12rem;
       top: 5rem;
@@ -21,6 +33,14 @@
       transform: skew(3deg, -6deg);
       &:hover {
         left: 5rem;
+      }
+
+      @include respond(tab-port) {
+        top: 2.5rem;
+      }
+      @include respond(phone) {
+        top: 2.5rem;
+        left: 6rem;
       }
     }
 
@@ -34,17 +54,30 @@
       &:hover {
         right: 5rem;
       }
+
+      @include respond(tab-port) {
+        top: 2.5rem;
+      }
+
+      @include respond(phone) {
+        top: 2.5rem;
+        right: 6rem;
+      }
     }
 
     &--p3 {
       width: 25%;
       border-radius: 50%;
-      left: 37%;
+      left: 37.5%;
       border: 0.2rem solid $color-grey-light-2;
       &:hover {
         box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
         transform: scale(1.05) translateY(-0.5rem); //makes it pop
         border: 0.2rem solid goldenrod; //like a border but not the same
+      }
+      @include respond(phone) {
+        width: 35%;
+        left: 32%;
       }
     }
   }

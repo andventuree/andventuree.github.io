@@ -1,3 +1,18 @@
+/*
+0 - 600px       Phone
+600 - 900px     Tablet portrait
+900 - 1200px    Tablet landscape
+[1200 - 1800] is where CSS is styled against
+1800px +        Large desktops
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px; applied below
+*/
 @keyframes moveInPrimaryHeader {
   0% {
     /* start of animation */
@@ -51,13 +66,24 @@ Rather, just reset to bring back to browser settings*/
   box-sizing: inherit; }
 
 html {
-  /* font-size: 10px; */
-  /* used 10px b/c its a clean num| 10px = 1 rem */
-  font-size: 62.5%;
-  /* default browser f-size is 16px, 100/16 = 62.5, making it completely dynamic */ }
+  /* default browser f-size is 16px, 100/16 = 62.5, making it completely dynamic */
+  font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 2rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
   font-family: "Lato", sans-serif;
@@ -66,8 +92,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   /* times bigger than previous line height */
-  color: #777;
-  padding: 2rem; }
+  color: #777; }
 
 .heading-primary {
   color: #fff;
@@ -76,6 +101,9 @@ body {
   /* fix for shaking from animation, bug no one knows y */
   backface-visibility: hidden;
   margin-bottom: 6rem; }
+  @media (max-width: 75em) {
+    .heading-primary {
+      margin-bottom: 2rem; } }
   .heading-primary--main {
     /* since a span is an inline elem, you'll need to change display to change behavior*/
     display: block;
@@ -86,15 +114,22 @@ body {
     /* that you've specified below */
     animation-duration: 1.5s;
     animation-timing-function: ease-out;
-    /*there are other distributions of speed */
-    /* animation-delay: 3s; */
-    /* animation-iteration-count: 3; */ }
+    /*there are other distributions of speed */ }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        font-size: 5rem;
+        letter-space: 1rem;
+        font-family: 4rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.6rem;
     animation: moveInBottomHeader 2s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-space: 0.5rem;
+        margin-bottom: 1rem; } }
 
 .heading-secondary {
   font-size: 4rem;
@@ -104,6 +139,9 @@ body {
   display: inline-block;
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
   transition: all 0.4s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3.5rem; } }
   .heading-secondary--color {
     background-image: linear-gradient(to right, #00a6fb, #006494);
     -webkit-background-clip: text;
@@ -117,6 +155,9 @@ body {
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase; }
+  @media (max-width: 37.5em) {
+    .heading-tertiary {
+      font-size: 1.7rem; } }
 
 .paragraph {
   font-size: 1.6rem; }
@@ -131,12 +172,21 @@ body {
 
 .u-margin-bottom-small {
   margin-bottom: 4rem !important; }
+  @media (max-width: 75em) {
+    .u-margin-bottom-small {
+      margin-bottom: 3rem !important; } }
+  @media (max-width: 37.5em) {
+    .u-margin-bottom-small {
+      margin-bottom: 1.5rem !important; } }
 
 .u-margin-bottom-medium {
   margin-bottom: 6rem !important; }
 
 .u-margin-bottom-big {
   margin-bottom: 8rem !important; }
+  @media (max-width: 56.25em) {
+    .u-margin-bottom-big {
+      margin-bottom: 4rem !important; } }
 
 .u-margin-bottom-huge {
   margin-bottom: 10rem !important; }
@@ -206,6 +256,9 @@ body {
 .composition {
   position: relative;
   height: 26rem; }
+  @media (max-width: 37.5em) {
+    .composition {
+      height: 20rem; } }
   .composition__photo {
     width: 30%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
@@ -214,6 +267,12 @@ body {
     z-index: 10;
     transition: all 0.5s;
     outline-offset: 2rem; }
+    @media (max-width: 56.25em) {
+      .composition__photo {
+        width: 40%; } }
+    @media (max-width: 37.5em) {
+      .composition__photo {
+        width: 45%; } }
     .composition__photo--p1 {
       left: 12rem;
       top: 5rem;
@@ -223,6 +282,13 @@ body {
       transform: skew(3deg, -6deg); }
       .composition__photo--p1:hover {
         left: 5rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p1 {
+          top: 2.5rem; } }
+      @media (max-width: 37.5em) {
+        .composition__photo--p1 {
+          top: 2.5rem;
+          left: 6rem; } }
     .composition__photo--p2 {
       right: 12rem;
       top: 5rem;
@@ -232,15 +298,26 @@ body {
       transform: skew(-3deg, 6deg); }
       .composition__photo--p2:hover {
         right: 5rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p2 {
+          top: 2.5rem; } }
+      @media (max-width: 37.5em) {
+        .composition__photo--p2 {
+          top: 2.5rem;
+          right: 6rem; } }
     .composition__photo--p3 {
       width: 25%;
       border-radius: 50%;
-      left: 37%;
+      left: 37.5%;
       border: 0.2rem solid #eee; }
       .composition__photo--p3:hover {
         box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
         transform: scale(1.05) translateY(-0.5rem);
         border: 0.2rem solid goldenrod; }
+      @media (max-width: 37.5em) {
+        .composition__photo--p3 {
+          width: 35%;
+          left: 32%; } }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95); }
 
@@ -258,6 +335,9 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 100, 148, 0.8), rgba(0, 0, 0, 0.8));
     -webkit-background-clip: text;
     color: transparent; }
+    @media (max-width: 37.5em) {
+      .tech-box__icon {
+        font-size: 5rem; } }
   .tech-box:hover {
     transform: translateY(0.3rem) scale(0.99);
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
@@ -272,12 +352,28 @@ body {
   padding-left: 9rem;
   transform: skewX(-12deg);
   transition: all 0.3s; }
+  @media (max-width: 56.25em) {
+    .project {
+      width: 100%;
+      padding: 2rem;
+      padding-left: 7rem; } }
+  @media (max-width: 37.5em) {
+    .project {
+      transform: skewX(0); } }
   .project__shape {
     width: 15rem;
     height: 15rem;
     float: left;
     transform: translateX(-3rem) skew(12deg);
-    position: relative; }
+    position: relative;
+    top: 2rem; }
+    @media (max-width: 56.25em) {
+      .project__shape {
+        top: 1rem; } }
+    @media (max-width: 37.5em) {
+      .project__shape {
+        top: 3rem;
+        transform: translateX(-3rem) skew(0); } }
   .project__img {
     height: 100%;
     transform: scale(1);
@@ -286,6 +382,14 @@ body {
     transition: all 0.5s; }
   .project__text {
     transform: skewX(12deg); }
+    @media (max-width: 56.25em) {
+      .project__text {
+        padding-left: 16rem; } }
+    @media (max-width: 37.5em) {
+      .project__text {
+        transform: skew(0); } }
+  .project__url {
+    display: inline-block; }
   .project__link:link, .project__link:visited {
     color: #0582ca;
     text-transform: uppercase;
@@ -306,6 +410,9 @@ body {
   .project:hover {
     transform: translateY(0.3rem) skewX(-12deg) scale(0.99);
     box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1); }
+    @media (max-width: 37.5em) {
+      .project:hover {
+        transform: translateY(0.3rem) skewX(0) scale(0.99); } }
   .project:hover .project__caption {
     opacity: 0;
     transform: translate(50%, 20%); }
@@ -318,6 +425,9 @@ body {
   text-shadow: 0.3rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
   perspective: 1000px;
   backface-visibility: hidden; }
+  @media (max-width: 37.5em) {
+    .social-network__bubble {
+      font-size: 4rem; } }
   .social-network__bubble:hover {
     /* since we want to move it vertical, use -Y */
     transform: translateY(-0.3rem);
@@ -363,14 +473,14 @@ body {
   overflow: hidden;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px; }
+  @media (max-width: 56.25em) {
+    .bg-video {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px; } }
   .bg-video__content {
     height: 100%;
     width: 100%;
     object-fit: cover; }
-
-.navbar {
-  border-bottom: 1px solid black;
-  border-top: 1px solid black; }
 
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80); }
@@ -393,7 +503,12 @@ body {
   z-index: 2000;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  border: 2px solid rgba(119, 119, 119, 0.3); }
+  @media (max-width: 56.25em) {
+    .navigation__button {
+      top: 80vh;
+      right: 4rem; } }
 
 .navigation__background {
   height: 6rem;
@@ -405,6 +520,10 @@ body {
   background-image: radial-gradient(#0582ca, #006494);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  @media (max-width: 56.25em) {
+    .navigation__background {
+      top: 80vh;
+      right: 4.5rem; } }
 
 .navigation__nav {
   height: 100vh;
@@ -450,7 +569,7 @@ body {
 
 .navigation__icon {
   position: relative;
-  margin-top: 3.5rem; }
+  margin-top: 3.2rem; }
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     width: 3rem;
     height: 3px;
@@ -489,6 +608,10 @@ body {
   background-position: bottom;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px; }
+  @media (max-width: 56.25em) {
+    .footer {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px; } }
 
 .header {
   height: 97vh;
@@ -499,12 +622,19 @@ body {
   /* if img needs to get cut off, it'll always show position specified. This will cut off bottom */
   /* background-position: center; will crop top and bottom to keep img center */
   -webkit-clip-path: ploygon(0 0, 100% 0, 100% 80%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   /* topLeft, topRight, bottomRight, bottomLeft */
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   position: relative;
   /* if this relative is not present, the .logo-box would be 40px from top left */
   border-top-right-radius: 20px;
   border-top-left-radius: 20px; }
+  @media (max-width: 56.25em) {
+    .header {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+      -webkit-clip-path: ploygon(0 0, 100% 0, 100% 90%, 0 100%);
+      /* topLeft, topRight, bottomRight, bottomLeft */
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); } }
   .header__text-box {
     position: absolute;
     /*in relation to parent */
@@ -522,6 +652,9 @@ body {
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 2rem; } }
   .row::after {
     content: "";
     display: table;
@@ -530,6 +663,9 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 2rem; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -538,6 +674,9 @@ body {
     width: calc( 2 * ((100% - 2 * 6rem)) / 3 + 6rem); }
   .row .col-1-of-4 {
     width: calc((100% - 3 * 6rem) / 4); }
+    @media (max-width: 56.25em) {
+      .row .col-1-of-4 {
+        width: calc((100% - 3 * 2rem) / 4); } }
   .row .col-2-of-4 {
     width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
@@ -547,6 +686,9 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 5rem;
   margin-top: -30vh; }
+  @media (max-width: 56.25em) {
+    .section-about {
+      padding: 25rem 5rem 15rem 5rem; } }
 
 .section-tech-stack {
   padding: 5rem 5rem 10rem 5rem;
@@ -561,3 +703,6 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 5rem 10rem 5rem;
   margin-top: -20vh; }
+  @media (max-width: 56.25em) {
+    .section-project {
+      padding: 20rem 5rem 5rem 5rem; } }
