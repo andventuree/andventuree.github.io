@@ -9,17 +9,21 @@
   background-position: top; /* if img needs to get cut off, it'll always show position specified. This will cut off bottom */
   /* background-position: center; will crop top and bottom to keep img center */
   -webkit-clip-path: ploygon(0 0, 100% 0, 100% 80%, 0 100%);
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 80%,
-    0 100%
-  ); /* topLeft, topRight, bottomRight, bottomLeft */
+  /* topLeft, topRight, bottomRight, bottomLeft */
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   position: relative;
   /* if this relative is not present, the .logo-box would be 40px from top left */
 
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+
+  @include respond(tab-port) {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    -webkit-clip-path: ploygon(0 0, 100% 0, 100% 90%, 0 100%);
+    /* topLeft, topRight, bottomRight, bottomLeft */
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
 
   &__text-box {
     position: absolute; /*in relation to parent */

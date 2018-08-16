@@ -5,6 +5,10 @@
     perspective: 1000px;
     backface-visibility: hidden;
 
+    @include respond(phone) {
+      font-size: 4rem;
+    }
+
     &:hover {
       //looks like button is raised
       /* since we want to move it vertical, use -Y */
