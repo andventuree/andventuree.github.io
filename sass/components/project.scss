@@ -15,6 +15,15 @@
     float: left;
     transform: translateX(-3rem) skew(12deg);
     position: relative;
+    top: 2rem;
+
+    @include respond(tab-port) {
+      top: 3rem;
+    }
+
+    @include respond(phone) {
+      top: 10rem;
+    }
   }
 
   &__img {
@@ -24,10 +33,17 @@
 
     backface-visibility: hidden;
     transition: all 0.5s;
+
+    // @include respond(tab-port) {
+    //   top: 10rem;
+    // }
   }
 
   &__text {
     transform: skewX(12deg);
+    @include respond(tab-port) {
+      padding-left: 16rem;
+    }
   }
 
   &__link {
