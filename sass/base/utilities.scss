@@ -13,7 +13,7 @@
   @include respond(tab-land) {
     margin-bottom: 3rem !important;
   }
-  @include respond(phone) {
+  @include respond(big-phone) {
     margin-bottom: 1.5rem !important;
   }
 }

@@ -16,7 +16,8 @@
 
 // MEDIA QUERY MANAGER
 /*
-0 - 600px       Phone
+0 - 450px       Phone
+450px - 600px   Phone
 600 - 900px     Tablet portrait
 900 - 1200px    Tablet landscape
 [1200 - 1800] is where CSS is styled against
@@ -33,6 +34,12 @@ $breakpoint argument choices:
 
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
+    //450px / 16 = 28.125em
+    @media (max-width: 28.125em) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-phone {
     //600px / 16 = 37.5em
     @media (max-width: 37.5em) {
       @content;

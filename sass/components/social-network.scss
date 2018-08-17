@@ -5,8 +5,9 @@
     perspective: 1000px;
     backface-visibility: hidden;
 
-    @include respond(phone) {
+    @include respond(big-phone) {
       font-size: 4rem;
+      padding: 1rem;
     }
 
     &:hover {

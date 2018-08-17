@@ -7,6 +7,10 @@
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
   transition: all 0.2s;
 
+  @include respond(tab-port) {
+    margin-bottom: $gutter-horizontal-small;
+  }
+
   &__icon {
     font-size: 6rem;
     display: inline-block;
@@ -19,7 +23,7 @@
     //possible b/c iconfont is text at the end of the day, not an img
     color: transparent; //takes out font color to show gradient color, which is an img
 
-    @include respond(phone) {
+    @include respond(big-phone) {
       font-size: 5rem;
     }
   }

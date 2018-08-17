@@ -2,7 +2,7 @@
   position: relative;
   height: 26rem;
 
-  @include respond(phone) {
+  @include respond(big-phone) {
     height: 20rem;
   }
 
@@ -20,7 +20,7 @@
       width: 40%;
     }
 
-    @include respond(phone) {
+    @include respond(big-phone) {
       width: 45%;
     }
 
@@ -38,7 +38,7 @@
       @include respond(tab-port) {
         top: 2.5rem;
       }
-      @include respond(phone) {
+      @include respond(big-phone) {
         top: 2.5rem;
         left: 6rem;
       }
@@ -59,7 +59,7 @@
         top: 2.5rem;
       }
 
-      @include respond(phone) {
+      @include respond(big-phone) {
         top: 2.5rem;
         right: 6rem;
       }
@@ -75,7 +75,7 @@
         transform: scale(1.05) translateY(-0.5rem); //makes it pop
         border: 0.2rem solid goldenrod; //like a border but not the same
       }
-      @include respond(phone) {
+      @include respond(big-phone) {
         width: 35%;
         left: 32%;
       }
