@@ -29,12 +29,6 @@ body {
     animation-name: moveInPrimaryHeader; /* that you've specified below */
     animation-duration: 1.5s;
     animation-timing-function: ease-out; /*there are other distributions of speed */
-
-    @include respond(big-phone) {
-      font-size: 5rem;
-      letter-space: 1rem;
-      font-family: 4rem;
-    }
   }
 
   &--sub {
@@ -45,8 +39,9 @@ body {
     animation: moveInBottomHeader 2s ease-out;
 
     @include respond(big-phone) {
-      letter-space: 0.5rem;
-      margin-bottom: 1rem;
+      letter-spacing: 0.6rem;
+      margin: 2rem 0;
+      // margin-bottom: 1rem;
     }
   }
 }

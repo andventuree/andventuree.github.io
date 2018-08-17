@@ -19,6 +19,10 @@
     transform: skewX(0);
   }
 
+  @include respond(phone) {
+    padding: 3rem 2rem;
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -34,6 +38,11 @@
     @include respond(big-phone) {
       top: 3rem;
       transform: translateX(-3rem) skew(0);
+    }
+    @include respond(phone) {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
     }
   }
 
@@ -55,6 +64,10 @@
 
     @include respond(big-phone) {
       transform: skew(0);
+    }
+
+    @include respond(phone) {
+      padding: 18rem 0 0 0;
     }
   }
 

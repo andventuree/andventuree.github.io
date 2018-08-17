@@ -20,6 +20,7 @@
   @include respond(tab-port) {
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
+    width: 1005;
     -webkit-clip-path: ploygon(0 0, 100% 0, 100% 90%, 0 100%);
     /* topLeft, topRight, bottomRight, bottomLeft */
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
