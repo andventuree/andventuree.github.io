@@ -1,9 +1,9 @@
 .header {
   height: 97vh;
   background-image: linear-gradient(
-    /* color transition*/ to right bottom,
+    /* color transition*/ to right top,
     rgba($color-primary-light, 0.9),
-    rgba($color-primary, 0.9)
+    rgba($color-primary-dark, 0.9)
   );
   background-size: cover; /* will always try to fit the viewport in the box */
   background-position: top; /* if img needs to get cut off, it'll always show position specified. This will cut off bottom */
@@ -21,6 +21,7 @@
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     width: 1005;
+
     -webkit-clip-path: ploygon(0 0, 100% 0, 100% 90%, 0 100%);
     /* topLeft, topRight, bottomRight, bottomLeft */
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
