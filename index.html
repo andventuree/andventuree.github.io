@@ -23,7 +23,7 @@
     <title>Andrew Wong</title>
     <link rel='shortcut icon' href='img/favicon.ico' />
 
-    <script type='type/javascript' src="index.js" defer></script>
+
     </script>
 </head>
 
@@ -323,7 +323,17 @@
             </div>
         </div>
     </footer>
+    <script >
+        const elements = document.getElementsByClassName("navigation__link");
+        const navToggle = document.getElementById('navi-toggle');
 
+        Array.prototype.slice.call(elements)
+        .forEach((el) => {
+            el.addEventListener('click', (e) => {
+                navToggle.checked = false;
+            });
+        });
+    </script>
 </body>
 
 </html>
