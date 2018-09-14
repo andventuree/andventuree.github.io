@@ -14,9 +14,6 @@
   position: relative;
   /* if this relative is not present, the .logo-box would be 40px from top left */
 
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-
   @include respond(tab-port) {
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;

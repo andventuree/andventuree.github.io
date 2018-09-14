@@ -1,15 +1,11 @@
 .footer {
   padding: 5rem;
-  // width: 100%;
   background-image: linear-gradient(
     to right bottom,
     rgba($color-primary, 0.8),
     rgba($color-primary-dark, 1)
   );
   background-position: bottom;
-
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
 
   @include respond(tab-port) {
     border-bottom-left-radius: 0px;
