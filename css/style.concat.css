@@ -1446,8 +1446,7 @@ html {
       font-size: 75%; } }
 
 body {
-  box-sizing: border-box;
-  padding: 2rem; }
+  box-sizing: border-box; }
   @media (max-width: 56.25em) {
     body {
       padding: 0; } }
@@ -1962,9 +1961,7 @@ body {
 .footer {
   padding: 5rem;
   background-image: linear-gradient(to right bottom, rgba(5, 130, 202, 0.8), #006494);
-  background-position: bottom;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px; }
+  background-position: bottom; }
   @media (max-width: 56.25em) {
     .footer {
       border-bottom-left-radius: 0px;
@@ -1982,9 +1979,7 @@ body {
   /* topLeft, topRight, bottomRight, bottomLeft */
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   position: relative;
-  /* if this relative is not present, the .logo-box would be 40px from top left */
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px; }
+  /* if this relative is not present, the .logo-box would be 40px from top left */ }
   @media (max-width: 56.25em) {
     .header {
       border-top-right-radius: 0px;
